@@ -13,7 +13,11 @@ def main():
   book_text = get_book_text("./books/frankenstein.txt")
   word_count = count_words(book_text)
   char_count_dict = count_characters(book_text.lower())
+  print("============ BOOKBOT ============")
+  print("Analyzing book found at books/frankenstein.txt...")
+  print("----------- Word Count ----------")
   print(f"Found {word_count} total words")
+  print("--------- Character Count -------")
   print_list(sort_dict_on_values(char_count_dict))
 
 main()
