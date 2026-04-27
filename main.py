@@ -3,7 +3,7 @@ from stats import (
   count_characters,
   sort_dict_on_values,
 )
-from sys import argv
+import sys
 
 def get_book_text(filepath):
   with open(filepath) as f:
@@ -15,10 +15,11 @@ def print_list(list_of_dict):
     print(f"{d['name']}: {d['count']}")
 
 def main():
-  if len(argv) != 2:
+  if len(sys.argv) != 2:
     print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
   else:
-    book_text = get_book_text(argv[1])
+    book_text = get_book_text(sys.argv[1])
     word_count = count_words(book_text)
     char_count_dict = count_characters(book_text.lower())
     sorted_list = sort_dict_on_values(char_count_dict)
